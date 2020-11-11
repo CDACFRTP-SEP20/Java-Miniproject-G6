@@ -34,11 +34,11 @@
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>CitizenController</servlet-name>
-  	<url-pattern>/CitizenController</url-pattern>
+  	<url-pattern>/CitizenController/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>HeadController</servlet-name>
-  	<url-pattern>/HeadController</url-pattern>
+  	<url-pattern>/HeadController/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>AppController</servlet-name>

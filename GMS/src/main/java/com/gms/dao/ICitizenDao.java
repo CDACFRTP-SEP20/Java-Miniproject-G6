@@ -1,5 +1,8 @@
 package com.gms.dao;
 
-public interface ICitizenDao {
+import com.gms.model.Complaint;
 
+public interface ICitizenDao {
+	public int registerComplaint(Complaint complaint) throws Exception;
+	public int getId(String username)throws Exception;
 }
