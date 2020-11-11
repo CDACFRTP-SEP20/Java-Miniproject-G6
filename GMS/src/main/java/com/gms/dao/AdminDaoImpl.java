@@ -68,7 +68,7 @@ public class AdminDaoImpl implements IAdminDao {
 		}
 		return user;
 	}
-
+//update part
 	public int updateHead(Users user) throws Exception {
 		String sql = "update users set password = ? , email=? , phoneno=? , address=? , role=? , deptid=? where username = ?";
 		Connection connection = DbUtil.getConnection();
