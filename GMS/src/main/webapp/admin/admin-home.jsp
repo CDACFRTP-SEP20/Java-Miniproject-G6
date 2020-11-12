@@ -20,14 +20,19 @@
 	<div class="header">
 		<a href="#" class="logo">Greviance Management System</a>
 		<div class="header-right">
-				<a href="<%=request.getContextPath()%>/logout.jsp">Logout</a>
+				<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
 		</div>
 	</div>
 	<br>
 	<!-- logic for rendering list...  -->
 	<h4>${deletemsg}</h4>
-	
-	<table border="1" id="table">
+	<caption>
+					<b><center>
+							<h3>List of Department Head </h3>
+						</center></b>
+</caption>
+	<br>
+	<table border="1" id="table" align="center">
 		<tr>
 			<th>Username</th>
 			<th>Email</th>

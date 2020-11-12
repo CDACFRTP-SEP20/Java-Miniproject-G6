@@ -18,7 +18,8 @@
 <div class="header">
 		<a href="#default" class="logo">Greviance Management System</a>
 		<div class="header-right">
-			<a href="index.jsp">HOME</a>
+		</a>
+			<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
 		</div>
 	</div>
 	<br>
