@@ -9,12 +9,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style><%@include file="/loginstyle.css"%></style>
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
 </head>
 <body>
+	<div class="header">
+		<a href="#" class="logo">Greviance Management System</a>
+		<div class="header-right">
+				<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
+		</div>
+	</div>
 	<!-- logic for rendering list...  -->
 	${deletemsg}
-	<a href="<%=request.getContextPath()%>/admin/add-user.jsp">add users</a>
-	<table border="1">
+	
+	<caption>
+					<b><center>
+						<h3>Complaint List </h3>
+					</center></b>
+</caption>
+	<br>
+	<table border="1" id="table" align="center">
 		<tr>
 			<th>complaintid</th>
 			<th>userid</th>
@@ -23,6 +40,7 @@
 			<th>remark</th>
 			<th>status</th>
 			<th>Action</th>
+			<th>Take action</th>
 		</tr>
 		<c:forEach var="complaints" items="${complaints }">
 			<tr>
@@ -36,13 +54,15 @@
 			<td><c:out value="${complaints.status}"></c:out></td>
 			<td>
 			<a href="<%=request.getContextPath()%>/HeadController/deleteuser?cid=${user.username}">Transfer</a>
-			</td>
-			<td>
+			&nbsp
 			<a href="<%=request.getContextPath()%>/HeadController/edituser?cid=${user.username}">change status</a>
 			</td>
 			</tr>
+
 		</c:forEach>
-		
+
 	</table>
+
+	
 </body>
 </html>
