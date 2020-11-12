@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.gms.model.Complaint;
 import com.gms.model.Users;
@@ -18,13 +19,14 @@ import com.gms.service.HeadService;
  */
 public class HeadController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	
 	HeadService hs = new HeadService();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = request.getPathInfo();
 		//list heads
-		if(path.equals("/listcomplaints")) {			
+		if(path.equals("/listcomplaints")) {
+			System.out.println("in haedController1");
 			try {
 				List<Complaint> complaints =  hs.getComplaints();
 				request.setAttribute("complaints", complaints);
@@ -33,6 +35,26 @@ public class HeadController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		////////////////////
+		if(path.equals("/deleteuser")) {
+			System.out.println("in deleteusertranser");
+			try{ 
+				List<Complaint> complaints;
+				complaints = hs.getComplaints();
+				Complaint com = new Complaint();
+				int cid = com.getcId();
+				int id  = Integer.parseInt(request.getParameter("name"));
+				request.setAttribute("cid", cid);
+			   int did = hs.transferComplaint(cid);
+		
+			request.setAttribute("complaints", complaints);
+			request.getRequestDispatcher("head-home.jsp").forward(request, response);
+			} catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+		
 
 	}
 

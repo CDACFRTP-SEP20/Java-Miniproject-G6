@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+//import com.cybage.controller.AdminController;
 import com.gms.model.Users;
 import com.gms.service.AdminService;
 import com.mysql.cj.protocol.x.SyncFlushDeflaterOutputStream;
@@ -22,17 +26,20 @@ import com.mysql.cj.protocol.x.SyncFlushDeflaterOutputStream;
 		)
 
 public class AdminController extends HttpServlet {
+	public static final Logger logger = LogManager.getLogger(AdminController.class); 
+	
 	private static final long serialVersionUID = 1L;
 	AdminService as = new AdminService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = request.getPathInfo();
-
+		
 		//list heads
 		if(path.equals("/listheads")) {			
 			try {
-				List<Users> xyz =  as.getHeads();
-				request.setAttribute("heads", xyz);
+				logger.info("listing haeds");
+				List<Users> user =  as.getHeads();
+				request.setAttribute("heads", user);
 				request.getRequestDispatcher("/admin/admin-home.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -42,6 +49,8 @@ public class AdminController extends HttpServlet {
 		//add new dept head
 		if(path.equals("/addhead")) {			
 			try {
+				logger.info("adding heads");
+				
 				Users head = new Users();
 				head.setUsername(request.getParameter("username"));
 				head.setPassword(request.getParameter("password"));
@@ -59,6 +68,7 @@ public class AdminController extends HttpServlet {
 		//delete head
 		if(path.equals("/deletehead")) {			
 			try {
+				logger.info("delet heads");
 				as.deleteHead(request.getParameter("username"));
 				request.setAttribute("deletemsg", "head deleted successfully");
 				response.sendRedirect("listheads");								
@@ -81,14 +91,14 @@ public class AdminController extends HttpServlet {
 				System.out.println("controller");
 				Users user = new Users();
 				user.setUsername(request.getParameter("username"));
-				
+
 				System.out.println(request.getParameter("username"));
 				System.out.println(request.getParameter("email"));
 				System.out.println(request.getParameter("phoneno"));
 				System.out.println(request.getParameter("address"));
 				System.out.println(request.getParameter("role"));
 				System.out.println(request.getParameter("deptid"));
-				
+
 				user.setPassword(request.getParameter("password"));
 				user.setEmail(request.getParameter("email"));
 				user.setPhoneNo(request.getParameter("phoneno"));
@@ -101,9 +111,9 @@ public class AdminController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-	
+
 	}
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

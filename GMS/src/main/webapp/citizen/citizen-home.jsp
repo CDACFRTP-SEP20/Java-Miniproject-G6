@@ -18,7 +18,9 @@ session.setAttribute("citizenname",request.getRemoteUser());
 
 <a href="<%=request.getContextPath()%>/citizen/register-complaint.jsp">
 Register complaint</a>
-
+<a href="<%=request.getContextPath()%>/CitizenController/listcomplaints">
+View complaints</a>
+<a href="<%=request.getContextPath()%>/logout.jsp">Logout</a>
 
 
 </body>

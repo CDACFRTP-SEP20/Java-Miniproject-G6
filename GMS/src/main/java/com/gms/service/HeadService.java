@@ -12,5 +12,8 @@ public class HeadService {
 	public List<Complaint> getComplaints()throws Exception {
 		return headDao.getComplaints();
 	}
+	public int transferComplaint(int cid) throws Exception{
+		return headDao.transferComplaint(cid);
+	}
 
 }

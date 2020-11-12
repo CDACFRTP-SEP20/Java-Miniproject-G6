@@ -28,7 +28,7 @@ public class AppController extends HttpServlet {
 	HeadService hs=new HeadService();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		//HttpSession session=request.getSession();
 		String username=request.getParameter("j_username");
 		System.out.println(username);
 		System.out.println("hello");
@@ -36,8 +36,8 @@ public class AppController extends HttpServlet {
 			session.setAttribute("username",username);
 		if(request.isUserInRole("admin")) {
 			try {
-				List<Users> xyz =  as.getHeads();
-				request.setAttribute("heads", xyz);
+				List<Users> user =  as.getHeads();
+				request.setAttribute("heads", user);
 				request.getRequestDispatcher("/admin/admin-home.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
