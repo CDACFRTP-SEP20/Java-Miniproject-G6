@@ -1,12 +1,16 @@
 package com.gms.model;
 
+//POJO class
 public class Department {
+	
+	//member variables
 	private int deptId;
 	private String deptName;
 	private int userId;
+	
+	//constructors
 	public Department() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Department(int deptId, String deptName, int userId) {
 		super();
@@ -19,11 +23,10 @@ public class Department {
 		this.deptName = deptName;
 		this.userId = userId;
 	}
+	
+	//getters and setters
 	public int getDeptId() {
 		return deptId;
-	}
-	public void setDeptId(int deptId) {
-		this.deptId = deptId;
 	}
 	public String getDeptName() {
 		return deptName;
@@ -37,6 +40,8 @@ public class Department {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	
+	//toString method
 	@Override
 	public String toString() {
 		return "Department [deptId=" + deptId + ", deptName=" + deptName + ", userId=" + userId + "]";

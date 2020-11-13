@@ -9,40 +9,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+<%@ include file="/loginstyle.css"%>
+</style>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 </head>
 <body>
-	<!-- logic for rendering list...  -->
-	${deletemsg}
-	<a href="<%=request.getContextPath()%>/admin/add-user.jsp">add users</a>
-	<table border="1">
-		<tr>
-			<th>complaintid</th>
-			<th>userid</th>
-			<th>deptid</th>
-			<th>description</th>
-			<th>remark</th>
-			<th>status</th>
-			<th>Action</th>
-		</tr>
-		<c:forEach var="complaints" items="${complaints }">
-			<tr>
-			<!-- user.getUsername(); user.getUserrole() -->
-			<td><c:out value="${complaints.cId}"></c:out></td>  
-			<td><c:out value="${complaints.userId}"></c:out></td>
-			<td><c:out value="${complaints.deptId}"></c:out></td>
-			<td><c:out value="${complaints.description}"></c:out></td>
-			<td><c:out value="${complaints.userRemark}"></c:out></td>
-			<td><c:out value="${complaints.headRemark}"></c:out></td>
-			<td><c:out value="${complaints.status}"></c:out></td>
-			<td>
-			<a href="<%=request.getContextPath()%>/HeadController/deleteuser?cid=${user.username}">Transfer</a>
-			</td>
-			<td>
-			<a href="<%=request.getContextPath()%>/HeadController/edituser?cid=${user.username}">change status</a>
-			</td>
-			</tr>
-		</c:forEach>
-		
-	</table>
+	<div class="header">
+		<a href="#" class="logo">Grievance Management System</a>
+		<div class="header-right">
+			<a href="<%=request.getContextPath()%>/HeadController/listcomplaints">
+			SHOW COMPLAINTS</a>
+			<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
+		</div>
+	</div>
+	<%
+		session.setAttribute("headName", request.getRemoteUser());
+	%>
+	<img alt="background-image" src="images/background-head.png" style="opacity:0.5;height:auto;width:100%;"/>
 </body>
 </html>

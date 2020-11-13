@@ -24,9 +24,10 @@ public class AdminController extends HttpServlet {
 			throws ServletException, IOException {
 		String path = request.getPathInfo();
 
-		//function for list all heads
+		//list all heads
 		if (path.equals("/listheads")) {
 			try {
+				//calling getHeads function for getting all department heads from AdminService
 				List<DeptHead> user = as.getHeads();
 				request.setAttribute("heads", user);
 				request.getRequestDispatcher("/admin/admin-home.jsp").forward(request, response);
@@ -35,7 +36,7 @@ public class AdminController extends HttpServlet {
 			}
 		}
 
-		//function for adding new dept head
+		//add new department head
 		if (path.equals("/addhead")) {
 			try {
 				Users head = new Users();
@@ -54,15 +55,18 @@ public class AdminController extends HttpServlet {
 				} else {
 					head.setDeptId(4);
 				}
+				//calling addHead function from AdminService
 				as.addHead(head);
 				response.sendRedirect("listheads");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		//function for deleting department head
+		
+		//delete department head
 		if (path.equals("/deletehead")) {
 			try {
+				//calling deleteHead function from AdminService
 				as.deleteHead(request.getParameter("username"));
 				request.setAttribute("deletemsg", "head deleted successfully");
 				response.sendRedirect("listheads");
@@ -70,9 +74,11 @@ public class AdminController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		//function for getting department head which has to update
+		
+		//get department head which has to update
 		if (path.equals("/gethead")) {
 			try {
+				//calling getHead funtion from AdminService
 				Users user = as.getHead(request.getParameter("username"));
 				request.setAttribute("user", user);
 				request.getRequestDispatcher("/admin/update-head.jsp").forward(request, response);
@@ -80,13 +86,12 @@ public class AdminController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		//function for updating department head
+		
+		//update department head
 		if (path.equals("/updatehead")) {
 			try {
-				System.out.println("controller");
 				Users user = new Users();
 				user.setUsername(request.getParameter("username"));
-
 				user.setPassword(request.getParameter("password"));
 				user.setEmail(request.getParameter("email"));
 				user.setPhoneNo(request.getParameter("phoneno"));
@@ -101,8 +106,8 @@ public class AdminController extends HttpServlet {
 				} else {
 					user.setDeptId(4);
 				}
-
-				// user.setDeptId(Integer.parseInt(request.getParameter("deptid")));
+				
+				//calling updateHead function from AdminService
 				as.updateHead(user);
 				response.sendRedirect("listheads");
 			} catch (Exception e) {
@@ -114,7 +119,6 @@ public class AdminController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -3,7 +3,10 @@ package com.gms.model;
 import java.sql.Blob;
 import java.util.Arrays;
 
+//POJO class
 public class Complaint {
+	
+	//member variables
 	private int cId;
 	private int userId;
 	private int deptId;
@@ -12,9 +15,10 @@ public class Complaint {
 	private String headRemark;
 	private String status;
 	private byte[] screenshot;
+	
+	//constructors
 	public Complaint() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Complaint(int cId, int userId, int deptId, String description, String userRemark, String headRemark,
 			String status, byte[] screenshot) {
@@ -39,6 +43,8 @@ public class Complaint {
 		this.status = status;
 		this.screenshot = screenshot;
 	}
+	
+	//getters and setters
 	public int getcId() {
 		return cId;
 	}
@@ -87,6 +93,8 @@ public class Complaint {
 	public void setScreenshot(byte[] screenshot) {
 		this.screenshot = screenshot;
 	}
+	
+	//toString method
 	@Override
 	public String toString() {
 		return "Complaint [cId=" + cId + ", userId=" + userId + ", deptId=" + deptId + ", description=" + description
