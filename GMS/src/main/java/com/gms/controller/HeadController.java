@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.gms.model.Complaint;
 import com.gms.model.ComplaintObject;
 import com.gms.model.Users;
@@ -19,6 +22,7 @@ import com.gms.service.HeadService;
 
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = { "head" }))
 public class HeadController extends HttpServlet {
+	public static final Logger logger = LogManager.getLogger(HeadController.class.getName());
 	private static final long serialVersionUID = 1L;
 
 	HeadService hs = new HeadService();
@@ -34,6 +38,7 @@ public class HeadController extends HttpServlet {
 		//list all complaints of particular department head
 		if (path.equals("/listcomplaints")) {
 			try {
+				logger.info("Departmental Head Checking all complaints related to own Department");
 				//calling getComplaints function from HeadService(pending complaints)
 				List<ComplaintObject> complaints = hs.getComplaints(headName);
 				request.setAttribute("complaints", complaints);
@@ -49,6 +54,7 @@ public class HeadController extends HttpServlet {
 		//redirect to transfer complaint page
 		if (path.equals("/transferComplaintpage")) {
 			try {
+				logger.info("Try to transfer complaint");
 				session.setAttribute("cmpid", request.getParameter("cid"));
 				int cmpId = Integer.parseInt((String) session.getAttribute("cmpid"));
 				request.getRequestDispatcher("/head/transfercomplaint.jsp").forward(request, response);
@@ -62,6 +68,7 @@ public class HeadController extends HttpServlet {
 		if (path.equals("/transferComplaint")) {
 			int cmpId = Integer.parseInt((String) session.getAttribute("cmpid"));
 			try {
+				logger.info("Head Transfering complete to the respective Department");
 				//calling getDeptIdByDeptName function from HeadService
 				int id = hs.getDeptIdByDeptName(request.getParameter("depts"));
 				//calling updateDeptId function from HeadService
@@ -76,6 +83,7 @@ public class HeadController extends HttpServlet {
 		if (path.equals("/takeAction")) {
 			int cid = Integer.parseInt((String) request.getParameter("cid"));
 			try {
+				logger.info("Head taking some action on respective complaint");
 				//calling takeAction function from HeadService
 				hs.takeAction(cid);
 			} catch (Exception e) {

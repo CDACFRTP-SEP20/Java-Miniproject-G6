@@ -9,8 +9,12 @@ import java.util.List;
 import com.gms.model.DeptHead;
 import com.gms.model.Users;
 
-public class AdminDaoImpl implements IAdminDao {
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class AdminDaoImpl implements IAdminDao {
+	public static final Logger logger = LogManager.getLogger(AdminDaoImpl.class.getName());
 	//function for adding new department head
 	public int addHead(Users head) throws Exception {
 		String sql = "insert into users (username,password,email,phoneno,address,role,deptid) values(?,?,?,?,?,?,?)";
@@ -23,6 +27,7 @@ public class AdminDaoImpl implements IAdminDao {
 		ps.setString(5, head.getAddress());
 		ps.setString(6, "head");
 		ps.setInt(7, head.getDeptId());
+		logger.info("Admin Adding head into the Database");
 		return ps.executeUpdate();
 	}
 
@@ -40,6 +45,7 @@ public class AdminDaoImpl implements IAdminDao {
 						rs.getString(4), rs.getString(5)));
 			}
 		}
+		logger.info("getting Heads");
 		return heads;
 	}
 	
@@ -48,7 +54,8 @@ public class AdminDaoImpl implements IAdminDao {
 		String sql = "delete from users where username = ?";
 		Connection connection = DbUtil.getConnection();
 		PreparedStatement ps = connection.prepareStatement(sql);		
-		ps.setString(1, username);			
+		ps.setString(1, username);		
+		logger.info("Deleting Head from Database");
 		return ps.executeUpdate();
 	}
 
@@ -65,6 +72,7 @@ public class AdminDaoImpl implements IAdminDao {
 					rs.getString(4),rs.getString(5),rs.getString(6),
 					rs.getString(7),rs.getInt(8));
 		}
+		logger.info("getting department head  which is needed for updating head");
 		return user;
 	}
 
@@ -80,6 +88,7 @@ public class AdminDaoImpl implements IAdminDao {
 		ps.setString(5, "head");
 		ps.setInt(6, user.getDeptId());
 		ps.setString(7, user.getUsername());
+		logger.info("Updating Department Head");
 		return ps.executeUpdate();
 	}
 }

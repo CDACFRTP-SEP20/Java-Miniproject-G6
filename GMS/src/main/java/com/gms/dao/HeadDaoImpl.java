@@ -7,11 +7,14 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.gms.model.Complaint;
 import com.gms.model.ComplaintObject;
 
 public class HeadDaoImpl implements IHeadDao {
-
+	public static final Logger logger = LogManager.getLogger(HeadDaoImpl.class.getName());
 	//function for getting all pending complaints by headName
 	public List<ComplaintObject> getComplaints(String headName) throws Exception {
 		String sql = "select c.cid,u.username,d.deptname,c.description,c.userremark,c.headremark,c.status,c.screenshot from complaint c join users u on c.userId=u.userId join department d on c.deptId=d.deptId where c.deptid=?";
@@ -28,6 +31,7 @@ public class HeadDaoImpl implements IHeadDao {
 						rs.getString(5), rs.getString(6), rs.getString(7), rs.getBytes(8)));
 			}
 		}
+		logger.info("Admin Adding head into the Database");
 		return complaints;
 	}
 	
@@ -47,6 +51,7 @@ public class HeadDaoImpl implements IHeadDao {
 						rs.getString(5), rs.getString(6), rs.getString(7), rs.getBytes(8)));
 			}
 		}
+		logger.info("Getting all resolved complaints by Headname");
 		return resolvedcomplaints;
 	}
 
@@ -61,6 +66,7 @@ public class HeadDaoImpl implements IHeadDao {
 		while (rs.next()) {
 			deptId = rs.getInt(1);
 		}
+		logger.info("Getting Department id of that head");
 		return deptId;
 	}
 	
@@ -76,6 +82,7 @@ public class HeadDaoImpl implements IHeadDao {
 			id=rs.getInt("deptid");
 			System.out.println("dept id in dao"+id);
 		}
+		logger.info("getting deptId by deptName which is needed for transfer complaint to another department from database");
 		return id;
 	}
 
@@ -86,6 +93,7 @@ public class HeadDaoImpl implements IHeadDao {
 	    PreparedStatement ps = connection.prepareStatement(sql);
 		ps.setInt(1,deptId);
 		ps.setInt(2,cId);
+		logger.info("updating department id after transfer complaint to another department");
 		return ps.executeUpdate();
 	}
 
@@ -94,7 +102,8 @@ public class HeadDaoImpl implements IHeadDao {
 		String sql = "update complaint set headremark = 'resolved' , status='resolved' where cid = ?";
 		Connection connection = DbUtil.getConnection();
 	    PreparedStatement ps = connection.prepareStatement(sql);
-		ps.setInt(1,cId);		
+		ps.setInt(1,cId);	
+		logger.info("taking action on complaint");
 		return ps.executeUpdate();
 	}
 

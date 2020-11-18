@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.gms.model.DeptHead;
 import com.gms.model.Users;
 import com.gms.service.AdminService;
@@ -17,6 +20,7 @@ import com.mysql.cj.protocol.x.SyncFlushDeflaterOutputStream;
 
 @ServletSecurity(value = @HttpConstraint(rolesAllowed = { "admin" }))
 public class AdminController extends HttpServlet {
+	public static final Logger logger = LogManager.getLogger(AdminController.class.getName());
 	private static final long serialVersionUID = 1L;
 	AdminService as = new AdminService();
 
@@ -27,6 +31,7 @@ public class AdminController extends HttpServlet {
 		//list all heads
 		if (path.equals("/listheads")) {
 			try {
+				logger.info("Getting List of Heads to te admin");
 				//calling getHeads function for getting all department heads from AdminService
 				List<DeptHead> user = as.getHeads();
 				request.setAttribute("heads", user);
@@ -39,6 +44,7 @@ public class AdminController extends HttpServlet {
 		//add new department head
 		if (path.equals("/addhead")) {
 			try {
+				logger.info("Adding heads by Admin");
 				Users head = new Users();
 				head.setUsername(request.getParameter("username"));
 				head.setPassword(request.getParameter("password"));
@@ -66,6 +72,7 @@ public class AdminController extends HttpServlet {
 		//delete department head
 		if (path.equals("/deletehead")) {
 			try {
+				logger.info("Deleting Heads by Admin");
 				//calling deleteHead function from AdminService
 				as.deleteHead(request.getParameter("username"));
 				request.setAttribute("deletemsg", "head deleted successfully");
@@ -78,6 +85,7 @@ public class AdminController extends HttpServlet {
 		//get department head which has to update
 		if (path.equals("/gethead")) {
 			try {
+				logger.info("Getting Heads");
 				//calling getHead funtion from AdminService
 				Users user = as.getHead(request.getParameter("username"));
 				request.setAttribute("user", user);
@@ -90,6 +98,7 @@ public class AdminController extends HttpServlet {
 		//update department head
 		if (path.equals("/updatehead")) {
 			try {
+				logger.info("Updating  Heads by Admin");
 				Users user = new Users();
 				user.setUsername(request.getParameter("username"));
 				user.setPassword(request.getParameter("password"));

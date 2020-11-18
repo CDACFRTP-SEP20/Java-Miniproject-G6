@@ -11,10 +11,14 @@ import com.gms.model.Complaint;
 import com.gms.model.ComplaintObject;
 import com.gms.model.Users;
 
-public class CitizenDaoImpl implements ICitizenDao {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
+public class CitizenDaoImpl implements ICitizenDao {
+	public static final Logger logger = LogManager.getLogger(CitizenDaoImpl.class.getName());
 	//function to register complaint
 	public int registerComplaint(Complaint complaint) throws Exception {
+		
 		String sql = "insert into complaint (description,userremark,status,deptid,headremark,userId) values(?,?,?,?,?,?)";
 		Connection connection = DbUtil.getConnection();
 		PreparedStatement ps = connection.prepareStatement(sql);
@@ -24,6 +28,7 @@ public class CitizenDaoImpl implements ICitizenDao {
 		ps.setInt(4,complaint.getDeptId());
 		ps.setString(5,complaint.getHeadRemark());
 		ps.setInt(6,complaint.getUserId());
+		logger.info("Register Complaint into Database");
 		return ps.executeUpdate();
 	}
 	  
@@ -38,6 +43,7 @@ public class CitizenDaoImpl implements ICitizenDao {
 		while (rs.next()) {
 			id=rs.getInt("userid");
 		}
+		logger.info("getting Userid of the that username");
 		return id;
 	}
 
@@ -53,6 +59,7 @@ public class CitizenDaoImpl implements ICitizenDao {
 			complaints.add(new ComplaintObject(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
 					rs.getString(6),rs.getString(7),rs.getBytes(8)));
 		}
+		logger.info("Getting Complaints of Particular Citizen");
 		return complaints;
 	}
 	
@@ -67,6 +74,7 @@ public class CitizenDaoImpl implements ICitizenDao {
 		ps.setString(4,user.getPhoneNo());
 		ps.setString(5,user.getAddress());
 		ps.setString(6,user.getRole());
+		logger.info("Register new User as Citizen");
 		return ps.executeUpdate();
 	}
 }

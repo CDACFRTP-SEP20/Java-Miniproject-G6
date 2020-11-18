@@ -11,14 +11,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.gms.model.Complaint;
 import com.gms.model.ComplaintObject;
 import com.gms.model.Users;
 import com.gms.service.AdminService;
 import com.gms.service.CitizenService;
 
-@ServletSecurity(value = @HttpConstraint(rolesAllowed = { "citizen" }))
+//@ServletSecurity(value = @HttpConstraint(rolesAllowed = { "citizen" }))
 public class CitizenController extends HttpServlet {
+	public static final Logger logger = LogManager.getLogger(CitizenController.class.getName());
 	private static final long serialVersionUID = 1L;
 	CitizenService cs = new CitizenService();
 	
@@ -30,6 +34,7 @@ public class CitizenController extends HttpServlet {
 		String name=(String) session.getAttribute("citizenname");
 		int id=0;
 		try {
+		
 			id = cs.getId((String)session.getAttribute("citizenname"));
 		} catch (Exception e1) {
 			e1.printStackTrace();
@@ -38,7 +43,7 @@ public class CitizenController extends HttpServlet {
 		//register new complaint 
 		if(path.equals("/registercomplaint")) {			
 			try {
-				
+				logger.info("Citizen User Register the complaint");
 				Complaint complaint = new Complaint();
 				complaint.setDescription(request.getParameter("description"));
 				complaint.setUserRemark(request.getParameter("remark"));
@@ -69,6 +74,7 @@ public class CitizenController extends HttpServlet {
 		//list previous complaints of citizen
 		if(path.equals("/listcomplaints")) {	
 			try {
+				logger.info("Citizen User checkig our registered complaints");
 				//calling getComplaints function from CitizenService
 				List<ComplaintObject> complaints =  cs.getComplaints(id);
 				request.setAttribute("complaints", complaints);
@@ -81,6 +87,7 @@ public class CitizenController extends HttpServlet {
 		//register new citizen
 		if(path.equals("/registercitizen")) {
 			try {
+				logger.info("User Register as a Citizen");
 				Users user=new Users();
 				user.setUsername(request.getParameter("username"));
 				user.setPassword(request.getParameter("password"));
@@ -90,7 +97,7 @@ public class CitizenController extends HttpServlet {
 				user.setRole("citizen");
 				//calling registerCitizen function from CitizenService
 				cs.registerCitizen(user);
-				response.sendRedirect("/GMS/index.jsp");	
+				response.sendRedirect("/GMS/login.jsp");	
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

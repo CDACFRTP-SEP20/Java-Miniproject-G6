@@ -12,11 +12,13 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <title>Insert title here</title>
+
+  <script  src="register-complaint.js" type="text/javascript">  </script>
 </head>
 <body>
 
 <div class="header">
-		<a href="#" class="logo">Grievance Management System</a>
+		<a href="#" class="logo">Greviance Management System</a>
 		<div class="header-right">
 		<a href="<%=request.getContextPath()%>/CitizenController/listcomplaints">
 			YOUR COMPLAINTS</a>
@@ -32,47 +34,49 @@
 		<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">
+
+
 				<br>
+
+
 				<caption>
 					<b><center>
-							<h3>Register Complaint</h3>
+							<h3>Registration Form</h3>
 						</center></b>
 
 				</caption>
 				<br>
 
-				<form action="<%=request.getContextPath()%>/CitizenController/registercomplaint">
+
+				<form name="register-complaint" action="<%=request.getContextPath()%>/CitizenController/registercomplaint">
 
 					<fieldset class="form-group">
 						<label>Description:</label> <input type="text" class="form-control"
-							name="description" required="required">
+							name="description" id="description" required="required">
 					</fieldset>
 
 
 					<fieldset class="form-group">
 						<label>Remark:</label> <input type="text"
-							class="form-control" name="remark" required="required">
+							class="form-control" id="remark" name="remark" required="required">
 					</fieldset>
 
 
 					<fieldset class="form-group">
-						<label for="dept" >Dept Name:</label> 
-						<select name="dept" id="dept" class="form-control">
+						<label for="dept">Dept Name:</label> 
+						<select name="dept" id="dept">
 						<option value="water">Water</option>
 						<option value="road">Road</option>
 						<option value="electricity">Electricity</option>
-						<option value="health">Health</option>
 						</select>
 					</fieldset>
-					
-					<fieldset class="form-group">
-						<label>Upload Screenshot: </label>
-						<input type="file" name="screenshot" class="form-control"/><br>
+						 <fieldset class="form-group">
+					Upload Screenshot: <input type="file" name="screenshot"/><br>
 					</fieldset>
 
 					
 					<center>
-						<button type="submit" class="btn btn-success">Register Complaint</button>
+					<button type="submit" onclick="validate()" class="btn btn-success">Register Complaint</button>
 					</center>
 				</form>
 			</div>
@@ -80,4 +84,3 @@
 	</div>
 </body>
 </html>
- 
