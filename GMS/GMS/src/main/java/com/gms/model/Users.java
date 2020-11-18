@@ -1,6 +1,9 @@
 package com.gms.model;
 
+//POJO class
 public class Users {
+	
+	//member variables
 	private int userId;
 	private String username;
 	private String password;
@@ -9,9 +12,10 @@ public class Users {
 	private String address;
 	private String role;
 	private int deptId;
+	
+	//constructors
 	public Users() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Users(int userId, String username, String password, String email, String phoneNo, String address,
 			String role, int deptId) {
@@ -45,11 +49,10 @@ public class Users {
 		this.address = address;
 		this.role = role;
 	}
+	
+	//getters and setters
 	public int getUserId() {
 		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
 	}
 	public String getUsername() {
 		return username;
@@ -93,6 +96,8 @@ public class Users {
 	public void setDeptId(int deptId) {
 		this.deptId = deptId;
 	}
+	
+	//toString method
 	@Override
 	public String toString() {
 		return "Users [userId=" + userId + ", username=" + username + ", password=" + password + ", email=" + email

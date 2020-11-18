@@ -8,25 +8,47 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<style><%@include file="/loginstyle.css"%></style>
+<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
 <title>Heads list</title>
 </head>
 <body>
+<%
+      
+      String addhead=(String)session.getAttribute("addhead"); 
+      if(addhead != null)
+      out.print(addhead);
+      session.setAttribute("addhead","");
+      %>
+
+	<div class="header">
+		<a href="#" class="logo">Grievance Management System</a>
+		<div class="header-right">
+				<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
+		</div>
+	</div>
+	<br>
 	<!-- logic for rendering list...  -->
-	${deletemsg}
-	<a href="<%=request.getContextPath()%>/admin/add-head.jsp">add head</a>
-	<table border="1">
+	<h4>${deletemsg}</h4>
+	<caption>
+					<b><center>
+							<h3>List of Department Head </h3>
+						</center></b>
+</caption>
+	<br>
+	<table border="1" id="table" align="center">
 		<tr>
 			<th>Username</th>
 			<th>Email</th>
 			<th>Phone No</th>
 			<th>Address</th>
-			<th>Dept Id</th>
+			<th>Dept Name</th>
+			<th colspan="2" style="text-align:center">Action</th>
 		</tr>
 		<c:forEach var="user" items="${heads}">
-
-
-
-
 			<tr>
 				<!-- user.getUsername(); user.getUserrole() -->
 
@@ -34,19 +56,19 @@
 				<td><c:out value="${user.email}"></c:out></td>
 				<td><c:out value="${user.phoneNo}"></c:out></td>
 				<td><c:out value="${user.address}"></c:out></td>
-				<td><c:out value="${user.deptId}"></c:out></td>
-				<td><a
-					href="<%=request.getContextPath()%>/AdminController/deletehead?username=${user.username}">delete</a>
+				<td><c:out value="${user.deptName}"></c:out></td>
+				<td>
+					<a href="<%=request.getContextPath()%>/AdminController/deletehead?username=${user.username}">Delete</a>
 				</td>
-				<td><a
-					href="<%=request.getContextPath()%>/AdminController/edithead?username=${user.username}">update</a>
+				<td>
+					<a href="<%=request.getContextPath()%>/AdminController/gethead?username=${user.username}">Update</a>
 				</td>
 			</tr>
-
 		</c:forEach>
-
 	</table>
-	<br>
-	<a href="<%=request.getContextPath()%>/logout.jsp">Logout</a>
+	<br><br>
+	<center>
+	<a href="<%=request.getContextPath()%>/admin/add-head.jsp"><button class="btn btn-warning">Add Head</button></a>
+	</center>
 </body>
 </html>

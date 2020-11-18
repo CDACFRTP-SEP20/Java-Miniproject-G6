@@ -4,44 +4,46 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.gms.model.Complaint;
+import com.gms.model.ComplaintObject;
 import com.gms.model.Users;
 import com.gms.service.AdminService;
 import com.gms.service.CitizenService;
 
-/**
- * Servlet implementation class CitizenController
- */
+//@ServletSecurity(value = @HttpConstraint(rolesAllowed = { "citizen" }))
 public class CitizenController extends HttpServlet {
+	public static final Logger logger = LogManager.getLogger(CitizenController.class.getName());
 	private static final long serialVersionUID = 1L;
 	CitizenService cs = new CitizenService();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String path = request.getPathInfo();
 		
-		//HttpSession session1=request.getSession();
+		//creating Http session object for getting citizen name
 		HttpSession session=request.getSession();
-		System.out.println("Citizen name::"+session.getAttribute("citizenname"));
 		String name=(String) session.getAttribute("citizenname");
-		//System.out.println("username"+username);
 		int id=0;
 		try {
+		
 			id = cs.getId((String)session.getAttribute("citizenname"));
-			System.out.println("userId1::::"+id);
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
-		System.out.println("userId2::::"+id);
 		
-		//register new complain 
+		//register new complaint 
 		if(path.equals("/registercomplaint")) {			
 			try {
-				
+				logger.info("Citizen User Register the complaint");
 				Complaint complaint = new Complaint();
 				complaint.setDescription(request.getParameter("description"));
 				complaint.setUserRemark(request.getParameter("remark"));
@@ -58,62 +60,56 @@ public class CitizenController extends HttpServlet {
 				else {
 					complaint.setDeptId(4);
 				}
-				
 				complaint.setUserId(id);
 				complaint.setStatus("pending");
 				complaint.setHeadRemark("pending");
+				//calling registerComplaint function from CitizenService
 				cs.registerComplaint(complaint);
-				request.getRequestDispatcher("/citizen/citizen-home.jsp").forward(request, response);
-				//response.sendRedirect("/citizen-home.jsp");								
+				request.getRequestDispatcher("/citizen/citizen-home.jsp").forward(request, response);							
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		
-		//list complaints
+		//list previous complaints of citizen
 		if(path.equals("/listcomplaints")) {	
-			
-			
-			System.out.println("Citizen name in list::"+session.getAttribute("citizenname"));
 			try {
-				List<Complaint> complaints =  cs.getComplaints(id);
-				
+				logger.info("Citizen User checkig our registered complaints");
+				//calling getComplaints function from CitizenService
+				List<ComplaintObject> complaints =  cs.getComplaints(id);
 				request.setAttribute("complaints", complaints);
-				//response.sendRedirect("/citizen/view-complaints.jsp");
 				request.getRequestDispatcher("/citizen/view-complaints.jsp").forward(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 		
-		//register citizen
+		//register new citizen
 		if(path.equals("/registercitizen")) {
 			try {
-			Users user=new Users();
-			user.setUsername(request.getParameter("username"));
-			user.setPassword(request.getParameter("password"));
-			user.setEmail(request.getParameter("email"));
-			user.setPhoneNo(request.getParameter("phoneno"));
-			user.setAddress(request.getParameter("address"));
-			user.setRole("citizen");
-			
-			
+				logger.info("User Register as a Citizen");
+				Users user=new Users();
+				user.setUsername(request.getParameter("username"));
+				user.setPassword(request.getParameter("password"));
+				user.setEmail(request.getParameter("email"));
+				user.setPhoneNo(request.getParameter("phoneno"));
+				user.setAddress(request.getParameter("address"));
+				user.setRole("citizen");
+				//calling registerCitizen function from CitizenService
 				cs.registerCitizen(user);
-				response.sendRedirect("/GMS/index.jsp");	
-				//request.getRequestDispatcher("/index.jsp").forward(request, response);
+				HttpSession session1 = request.getSession();
+				session1.setAttribute("registerdmsg", "User registered  successfully");
+				//request.getRequestDispatcher("login.jsp").forward(request, response);		
+				//response.sendRedirect("login.jsp");
+				response.sendRedirect("/GMS/login.jsp");
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
 		}	
-		
-
-		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 

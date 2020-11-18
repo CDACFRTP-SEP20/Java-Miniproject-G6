@@ -21,14 +21,39 @@
 	<div class="header">
 		<a href="#" class="logo">Grievance Management System</a>
 		<div class="header-right">
-			<a href="<%=request.getContextPath()%>/HeadController/listcomplaints">
-			SHOW COMPLAINTS</a>
 			<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
 		</div>
 	</div>
-	<%
-		session.setAttribute("headName", request.getRemoteUser());
-	%>
-	<img alt="background-image" src="images/background-head.png" style="opacity:0.5;height:auto;width:100%;"/>
+	<br>
+	<div class="container col-md-5">
+		<div class="card">
+			<div class="card-body">
+				<br>
+				<caption>
+					<b><center>
+							<h3>Transfer Complaint to other Department</h3>
+						</center></b>
+
+				</caption>
+				<br>
+				<form action="<%=request.getContextPath()%>/HeadController/transferComplaint">
+					<fieldset class="form-group">
+						<label>Select the Department :</label>
+			 
+					<select name="depts" id="depts" class="form-control">
+						<option value="water">Water</option>
+						<option value="road">Road</option>
+						<option value="electricity">Electricity</option>
+						<option value="health">Health</option>
+					</select>
+					<br>
+					<center>
+						<button type="submit" class="btn btn-success">Transfer
+							Complaint</button>
+					</center>
+				</form>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
