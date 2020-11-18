@@ -12,6 +12,8 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <title>Insert title here</title>
+
+  <script  src="register-complaint.js" type="text/javascript">  </script>
 </head>
 <body>
 
@@ -46,17 +48,17 @@
 				<br>
 
 
-				<form action="<%=request.getContextPath()%>/CitizenController/registercomplaint">
+				<form name="register-complaint" action="<%=request.getContextPath()%>/CitizenController/registercomplaint">
 
 					<fieldset class="form-group">
 						<label>Description:</label> <input type="text" class="form-control"
-							name="description" required="required">
+							name="description" id="description" required="required">
 					</fieldset>
 
 
 					<fieldset class="form-group">
-						<label>Remark:</label> <input type="password"
-							class="form-control" name="remark" required="required">
+						<label>Remark:</label> <input type="text"
+							class="form-control" id="remark" name="remark" required="required">
 					</fieldset>
 
 
@@ -74,7 +76,7 @@
 
 					
 					<center>
-					<button type="submit" class="btn btn-success">Register Complaint</button>
+					<button type="submit" onclick="validate()" class="btn btn-success">Register Complaint</button>
 					</center>
 				</form>
 			</div>

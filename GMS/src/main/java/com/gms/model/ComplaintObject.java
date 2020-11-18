@@ -1,15 +1,14 @@
 package com.gms.model;
 
-import java.sql.Blob;
 import java.util.Arrays;
 
-//POJO class
-public class Complaint {
+//ComplaintObject class for displaying complaits purpose
+public class ComplaintObject {
 	
 	//member variables
 	private int cId;
-	private int userId;
-	private int deptId;
+	private String username;
+	private String deptName;
 	private String description;
 	private String userRemark;
 	private String headRemark;
@@ -17,51 +16,36 @@ public class Complaint {
 	private byte[] screenshot;
 	
 	//constructors
-	public Complaint() {
+	public ComplaintObject() {
 		super();
 	}
-	public Complaint(int cId, int userId, int deptId, String description, String userRemark, String headRemark,
-			String status, byte[] screenshot) {
+	public ComplaintObject(int cId, String username, String deptName, String description, String userRemark,
+			String headRemark, String status, byte[] screenshot) {
 		super();
 		this.cId = cId;
-		this.userId = userId;
-		this.deptId = deptId;
+		this.username = username;
+		this.deptName = deptName;
 		this.description = description;
 		this.userRemark = userRemark;
 		this.headRemark = headRemark;
 		this.status = status;
 		this.screenshot = screenshot;
 	}
-	public Complaint(int userId, int deptId, String description, String userRemark, String headRemark, String status,
-			byte[] screenshot) {
-		super();
-		this.userId = userId;
-		this.deptId = deptId;
-		this.description = description;
-		this.userRemark = userRemark;
-		this.headRemark = headRemark;
-		this.status = status;
-		this.screenshot = screenshot;
-	}
-	
 	//getters and setters
 	public int getcId() {
 		return cId;
 	}
-	public void setcId(int cId) {
-		this.cId = cId;
+	public String getUsername() {
+		return username;
 	}
-	public int getUserId() {
-		return userId;
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public String getDeptName() {
+		return deptName;
 	}
-	public int getDeptId() {
-		return deptId;
-	}
-	public void setDeptId(int deptId) {
-		this.deptId = deptId;
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
 	}
 	public String getDescription() {
 		return description;
@@ -97,9 +81,10 @@ public class Complaint {
 	//toString method
 	@Override
 	public String toString() {
-		return "Complaint [cId=" + cId + ", userId=" + userId + ", deptId=" + deptId + ", description=" + description
-				+ ", userRemark=" + userRemark + ", headRemark=" + headRemark + ", status=" + status + ", screenshot="
-				+ Arrays.toString(screenshot) + "]";
+		return "ComplaintObject [cId=" + cId + ", username=" + username + ", deptName=" + deptName + ", description="
+				+ description + ", userRemark=" + userRemark + ", headRemark=" + headRemark + ", status=" + status
+				+ ", screenshot=" + Arrays.toString(screenshot) + "]";
 	}
+	
 	
 }

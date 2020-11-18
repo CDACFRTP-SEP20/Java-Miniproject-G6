@@ -18,13 +18,11 @@
 <body>
 
 <div class="header">
-		<a href="#" class="logo">Greviance Management System</a>
+		<a href="#" class="logo">Grievance Management System</a>
 		<div class="header-right">
 		<a href="<%=request.getContextPath()%>/citizen/register-complaint.jsp">
 		REGISTER COMPLAINTS
 		</a>
-
-		
 				<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
 		</div>
 	</div>
@@ -39,36 +37,24 @@
 	<br>
 	<table border="1" id="table" align="center">
 		<tr>
-			<th>complaintid</th>
-			<th>userid</th>
-			<th>deptid</th>
-			<th>description</th>
-			<th>remark</th>
-			<th>status</th>
-			<th>Action</th>
+			<th>Complaint Id</th>
+			<th>Username</th>
+			<th>Dept Id</th>
+			<th>Description</th>
+			<th>Remark</th>
+			<th>Status</th>
 		</tr>
 		<c:forEach var="complaints" items="${complaints}">
-
 			<tr>
-			<!-- user.getUsername(); user.getUserrole() -->
 			<td><c:out value="${complaints.cId}"></c:out></td>  
-			<td><c:out value="${complaints.userId}"></c:out></td>
-			<td><c:out value="${complaints.deptId}"></c:out></td>
+			<td><c:out value="${complaints.username}"></c:out></td>
+			<td><c:out value="${complaints.deptName}"></c:out></td>
 			<td><c:out value="${complaints.description}"></c:out></td>
 			<td><c:out value="${complaints.userRemark}"></c:out></td>
-			<td><c:out value="${complaints.headRemark}"></c:out></td>
 			<td><c:out value="${complaints.status}"></c:out></td>
 			</tr>
 		</c:forEach>
-
-	</table>
-	<br>
-	<center>
-		</center>
-	
-	
-	
-	
-	
+	</table>	
 </body>
 </html>
+ 

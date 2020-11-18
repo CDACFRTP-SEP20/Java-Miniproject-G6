@@ -7,7 +7,8 @@
 <title>Error Page</title>
 </head>
 <body>
-	<h2 style="color:red">Invalid user name / password</h2>
+	
 	<jsp:include page="login.jsp"></jsp:include>
+	<center><h2 style="color:red">Invalid username / password</h2></center>
 </body>
 </html>

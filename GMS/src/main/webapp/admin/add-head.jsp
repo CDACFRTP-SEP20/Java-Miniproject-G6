@@ -16,7 +16,7 @@
 <body>
 
 <div class="header">
-		<a href="#default" class="logo">Greviance Management System</a>
+		<a href="#default" class="logo">Grievance Management System</a>
 		<div class="header-right">
 		</a>
 			<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
@@ -64,15 +64,16 @@
 							name="address" required="required">
 					</fieldset>
 
-
 					<fieldset class="form-group">
-						<label>Role</label> <input type="text" class="form-control"
-							name="role" required="required">
-					</fieldset>
-					
-					<fieldset class="form-group">
-						<label>Department Id</label> <input type="number" class="form-control"
-							name="deptid" required="required">
+					<!-- 	<label>Department Id</label> <input type="number"
+							class="form-control" name="deptid" required="required">  -->
+							<select
+							name="dept" id="dept" class="form-control">
+							<option value="water">Water</option>
+							<option value="road">Road</option>
+							<option value="electricity">Electricity</option>
+							<option value="health">Health</option>
+						</select>
 					</fieldset>
 					<button type="submit" class="btn btn-success">Add Head</button>
 				</form>
