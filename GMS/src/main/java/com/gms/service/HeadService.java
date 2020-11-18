@@ -30,7 +30,7 @@ public class HeadService {
 	// function for getting deptId by department name
 	public int getDeptIdByDeptName(String parameter) throws Exception {
 		// TODO Auto-generated method stub
-		return headDao.getDeptId(parameter);
+		return headDao.getDeptIdByDeptName(parameter);
 	}
 
 	// function for updating deptId after transfer complaint to another department
