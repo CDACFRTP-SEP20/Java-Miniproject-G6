@@ -16,14 +16,15 @@
 <body>
 
 <div class="header">
-		<a href="#default" class="logo">Greviance Management System</a>
+		<a href="#default" class="logo">Grievance Management System</a>
 		<div class="header-right">
-			<a href="index.jsp">HOME</a>
+		</a>
+			<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
 		</div>
 	</div>
 	<br>
 		
-	<div class="container col-md-5">
+	<div class="container col-md-5" style="height:700px">
 		<div class="card">
 			<div class="card-body">
 				<br>
@@ -33,50 +34,52 @@
 						</center></b>
 				</caption>
 				<br>
-				<form form action="<%=request.getContextPath()%>/AdminController/addhead">			
-				
-					<fieldset class="form-group">
-						<label>Username</label> <input type="text" class="form-control"
-							name="username" required="required">
-					</fieldset>
+				<form form action="<%=request.getContextPath()%>/AdminController/addhead">               
+                        
+                              <fieldset class="form-group">
+                                    <label>Username<span class="text-danger">*</span></label> <input type="text" class="form-control"
+                                          name="username" pattern="[A-Za-z]{1,10}" minlength="3" required="required">
+                              </fieldset>
 
 
-					<fieldset class="form-group">
-						<label>Password</label> <input type="password"
-							class="form-control" name="password" required="required">
-					</fieldset>
+                              <fieldset class="form-group">
+                                    <label>Password<span class="text-danger">*</span></label> <input type="password"
+                                          class="form-control" name="password" required="required">
+                              </fieldset>
 
 
-					<fieldset class="form-group">
-						<label>Email</label> <input type="email" class="form-control"
-							name="email" required="required">
-					</fieldset>
+                              <fieldset class="form-group">
+                                    <label>Email<span class="text-danger">*</span></label> <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"
+                                          name="email" required="required">
+                              </fieldset>
 
-					<fieldset class="form-group">
-						<label>Phone no.</label> <input type="tel" class="form-control"
-							name="phoneno" required="required">
-					</fieldset>
-
-
-					<fieldset class="form-group">
-						<label>Address</label> <input type="text" class="form-control"
-							name="address" required="required">
-					</fieldset>
+                              <fieldset class="form-group">
+                                    <label>Phone no.<span class="text-danger">*</span></label> <input type="tel" class="form-control"
+                                          name="phoneno"  pattern="[7-9]{1}[0-9]{9}" minlength="10" maxlength="10" required="required">
+                              </fieldset>
 
 
-					<fieldset class="form-group">
-						<label>Role</label> <input type="text" class="form-control"
-							name="role" required="required">
-					</fieldset>
-					
-					<fieldset class="form-group">
-						<label>Department Id</label> <input type="number" class="form-control"
-							name="deptid" required="required">
-					</fieldset>
-					<button type="submit" class="btn btn-success">Add Head</button>
-				</form>
+                              <fieldset class="form-group">
+                                    <label>Address<span class="text-danger">*</span></label> <input type="text" class="form-control"
+                                          name="address" required="required">
+                              </fieldset>
+
+                              <fieldset class="form-group">
+                        <label>Select Department<span class="text-danger" required>*</span></label> 
+                                          <select
+                                          name="dept" id="dept" class="form-control">
+                                          <option value="water">Water</option>
+                                          <option value="road">Road</option>
+                                          <option value="electricity">Electricity</option>
+                                          <option value="health">Health</option>
+                                    </select>
+                              </fieldset>
+                              <button type="submit" class="btn btn-success">Add Head</button>
+                        </form>
+
 			</div>
 		</div>
 	</div>
 </body>
+	<jsp:include page="../footer.jsp"/>
 </html>

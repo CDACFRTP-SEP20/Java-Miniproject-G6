@@ -18,29 +18,40 @@
 <body>
 
 	<div class="header">
-		<a href="#" class="logo">Greviance Management System</a>
+		<a href="#" class="logo">Grievance Management System</a>
 		<div class="header-right">
-				<a href="<%=request.getContextPath()%>/logout.jsp">Logout</a>
+				<a href="<%=request.getContextPath()%>/logout.jsp">LOGOUT</a>
 		</div>
 	</div>
 	<br>
+	<center>
+	<%
+      
+      String addhead=(String)session.getAttribute("addhead"); 
+      if(addhead != null)
+      out.print(addhead);
+      session.setAttribute("addhead","");
+      %>
+	</center>
 	<!-- logic for rendering list...  -->
 	<h4>${deletemsg}</h4>
-	
-	<table border="1" id="table">
+	<caption>
+					<b><center>
+							<h3>List of Department Head </h3>
+						</center></b>
+</caption>
+	<br>
+	<div style="height:650px">
+	<table border="1" id="table" align="center">
 		<tr>
 			<th>Username</th>
 			<th>Email</th>
 			<th>Phone No</th>
 			<th>Address</th>
-			<th>Dept Id</th>
-			<th>Action</th>
+			<th>Dept Name</th>
+			<th colspan="2" style="text-align:center">Action</th>
 		</tr>
 		<c:forEach var="user" items="${heads}">
-
-
-
-
 			<tr>
 				<!-- user.getUsername(); user.getUserrole() -->
 
@@ -48,21 +59,21 @@
 				<td><c:out value="${user.email}"></c:out></td>
 				<td><c:out value="${user.phoneNo}"></c:out></td>
 				<td><c:out value="${user.address}"></c:out></td>
-				<td><c:out value="${user.deptId}"></c:out></td>
-				<td><a
-					href="<%=request.getContextPath()%>/AdminController/deletehead?username=${user.username}">delete</a>
-				
-				&nbsp<a
-					href="<%=request.getContextPath()%>/AdminController/edithead?username=${user.username}">update</a>
+				<td><c:out value="${user.deptName}"></c:out></td>
+				<td>
+					<a href="<%=request.getContextPath()%>/AdminController/deletehead?username=${user.username}">Delete</a>
+				</td>
+				<td>
+					<a href="<%=request.getContextPath()%>/AdminController/gethead?username=${user.username}">Update</a>
 				</td>
 			</tr>
-
 		</c:forEach>
-
 	</table>
-	<br>
+	<br><br>
 	<center>
-	<a href="<%=request.getContextPath()%>/admin/add-head.jsp"><button class="btn btn-warning">add head</button></a>
+	<a href="<%=request.getContextPath()%>/admin/add-head.jsp"><button class="btn btn-warning">Add Head</button></a>
 	</center>
+	</div>
+	<jsp:include page="../footer.jsp"/>
 </body>
 </html>
