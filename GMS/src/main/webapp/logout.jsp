@@ -8,14 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2 style="color:green">
-		User '<%=request.getRemoteUser()%>' has been logged out.
-	</h2>
+	
+	<jsp:include page="index.jsp"></jsp:include>
+	
 	<%
 		session.invalidate();
 	%>
-	<jsp:include page="index.jsp"></jsp:include>
 	<br />
 	<br />
+
 </body>
 </html>

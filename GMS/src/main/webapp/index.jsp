@@ -10,14 +10,14 @@
 <body>
 
 <div class="header">
-  <a href="#" class="logo">Greviance Management System</a>
+  <a href="#" class="logo">Grievance Management System</a>
   <div class="header-right">
-    <a href="<%=request.getContextPath()%>/AppController" >Login</a>
+    <a href="<%=request.getContextPath()%>/AppController" >LOGIN</a>
   </div>
 </div>
-
+	<img alt="background-image" src="images/background-home.jpg" style="opacity:0.5;height:auto;width:100%;"/>
 <br>
 
-
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>

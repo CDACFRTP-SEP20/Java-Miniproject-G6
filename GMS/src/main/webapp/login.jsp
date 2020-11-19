@@ -1,27 +1,45 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<form method="POST" action="j_security_check">
-		<table border="0">
-			<tr>
-				<td>Username</td>
-				<td><input type="text" name="j_username"></td>
-				
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td><input type="password" name="j_password"></td>
-			</tr>
-		</table>
-		
-		<input type="submit" value="Login!">
+<jsp:include page="loginHeader.jsp"/>
+  <center>  <%  String registerdmsg=(String)session.getAttribute("registerdmsg"); 
+      if(registerdmsg != null)
+      out.print(registerdmsg);
+      session.setAttribute("registerdmsg","");
+      %>
+</center>
+	<br>
+	<div class="container col-md-5" style="height:700px">
+		<div class="card">
+			<div class="card-body">
+				<br>
 
-	</form>
+				<caption>
+					<b><center>
+							<h3>Login Form</h3>
+						</center></b>
+				</caption>
+				<br>
+				<form name="loginform" method="POST" action="j_security_check">
+
+					<fieldset class="form-group">
+						<label>Username</label> <input type="text" class="form-control"
+							name="j_username" id="username"required="required">
+					</fieldset>
+
+
+					<fieldset class="form-group">
+						<label>Password</label> <input type="password"
+							class="form-control" name="j_password" id="password" required="required">
+					</fieldset>
+
+
+
+					<button type="submit" class="btn btn-success" onclick="validate()">Login</button>
+					<button type="reset" class="btn btn-danger">Reset</button>
+					<br>
+					<a href="register.jsp">New user? Register</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<jsp:include page="footer.jsp"/>
 </body>
 </html>
