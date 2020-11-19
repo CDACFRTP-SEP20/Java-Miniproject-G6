@@ -1,0 +1,204 @@
+2020-11-18 14:02:42,002 [http-nio-8080-exec-9] INFO  com.gms.controller.AppController - Log in  as a Citizen User
+2020-11-18 14:25:16,946 [http-nio-8080-exec-6] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 14:25:26,356 [http-nio-8080-exec-9] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 14:25:38,348 [http-nio-8080-exec-1] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 14:26:09,361 [http-nio-8080-exec-6] INFO  com.gms.controller.AppController - Log in  as a Department Head 
+2020-11-18 14:26:13,894 [http-nio-8080-exec-8] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 14:26:14,810 [http-nio-8080-exec-8] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:26:14,827 [http-nio-8080-exec-8] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 14:26:15,052 [http-nio-8080-exec-8] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:26:15,056 [http-nio-8080-exec-8] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 14:26:25,706 [http-nio-8080-exec-1] INFO  com.gms.controller.HeadController - Try to transfer complaint
+2020-11-18 14:26:29,857 [http-nio-8080-exec-2] INFO  com.gms.controller.HeadController - Head Transfering complete to the respective Department
+2020-11-18 14:26:29,949 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:26:30,029 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - updating department id after transfer complaint to another department
+2020-11-18 14:26:30,063 [http-nio-8080-exec-3] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 14:26:30,228 [http-nio-8080-exec-3] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:26:30,231 [http-nio-8080-exec-3] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 14:26:30,401 [http-nio-8080-exec-3] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:26:30,404 [http-nio-8080-exec-3] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 14:27:13,369 [http-nio-8080-exec-6] INFO  com.gms.controller.HeadController - Head taking some action on respective complaint
+2020-11-18 14:27:13,442 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - taking action on complaint
+2020-11-18 14:27:13,482 [http-nio-8080-exec-7] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 14:27:13,635 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:27:13,638 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 14:27:13,789 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:27:13,792 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 14:27:16,931 [http-nio-8080-exec-8] INFO  com.gms.controller.HeadController - Head taking some action on respective complaint
+2020-11-18 14:27:17,011 [http-nio-8080-exec-8] INFO  com.gms.dao.HeadDaoImpl - taking action on complaint
+2020-11-18 14:27:17,065 [http-nio-8080-exec-9] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 14:27:17,249 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:27:17,252 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 14:27:17,454 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 14:27:17,458 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 14:28:29,349 [http-nio-8080-exec-7] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 14:28:29,349 [http-nio-8080-exec-7] INFO  com.gms.controller.CitizenController - User Register as a Citizen
+2020-11-18 14:28:29,422 [http-nio-8080-exec-7] INFO  com.gms.dao.CitizenDaoImpl - Register new User as Citizen
+2020-11-18 17:55:15,223 [http-nio-8080-exec-11] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 17:55:16,167 [http-nio-8080-exec-11] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 17:55:29,007 [http-nio-8080-exec-12] INFO  com.gms.controller.AdminController - Getting Heads
+2020-11-18 17:55:29,070 [http-nio-8080-exec-12] INFO  com.gms.dao.AdminDaoImpl - getting department head  which is needed for updating head
+2020-11-18 17:55:44,891 [http-nio-8080-exec-17] INFO  com.gms.controller.AppController - Log in  as a Citizen User
+2020-11-18 17:55:53,096 [http-nio-8080-exec-20] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 17:55:53,097 [http-nio-8080-exec-20] INFO  com.gms.controller.CitizenController - Citizen User checkig our registered complaints
+2020-11-18 17:55:53,171 [http-nio-8080-exec-20] INFO  com.gms.dao.CitizenDaoImpl - Getting Complaints of Particular Citizen
+2020-11-18 18:56:21,685 [http-nio-8080-exec-6] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 18:56:22,868 [http-nio-8080-exec-6] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 18:56:55,996 [http-nio-8080-exec-1] INFO  com.gms.controller.AdminController - Adding heads by Admin
+2020-11-18 18:56:56,107 [http-nio-8080-exec-1] INFO  com.gms.dao.AdminDaoImpl - Admin Adding head into the Database
+2020-11-18 18:56:56,212 [http-nio-8080-exec-3] INFO  com.gms.controller.AdminController - Getting List of Heads to te admin
+2020-11-18 18:56:56,329 [http-nio-8080-exec-3] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 18:57:20,938 [http-nio-8080-exec-7] INFO  com.gms.controller.AppController - Log in  as a Citizen User
+2020-11-18 18:58:05,704 [http-nio-8080-exec-5] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 18:58:05,705 [http-nio-8080-exec-5] INFO  com.gms.controller.CitizenController - User Register as a Citizen
+2020-11-18 18:58:05,787 [http-nio-8080-exec-5] INFO  com.gms.dao.CitizenDaoImpl - Register new User as Citizen
+2020-11-18 18:59:05,485 [http-nio-8080-exec-1] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 18:59:05,590 [http-nio-8080-exec-1] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 18:59:44,217 [http-nio-8080-exec-2] INFO  com.gms.controller.AdminController - Adding heads by Admin
+2020-11-18 18:59:44,300 [http-nio-8080-exec-2] INFO  com.gms.dao.AdminDaoImpl - Admin Adding head into the Database
+2020-11-18 18:59:44,331 [http-nio-8080-exec-6] INFO  com.gms.controller.AdminController - Getting List of Heads to te admin
+2020-11-18 18:59:44,410 [http-nio-8080-exec-6] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 19:02:59,826 [http-nio-8080-exec-2] INFO  com.gms.controller.AppController - Log in  as a Department Head 
+2020-11-18 19:03:02,295 [http-nio-8080-exec-9] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:03:03,272 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:03:03,306 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:03:03,490 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:03:03,492 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:03:22,015 [http-nio-8080-exec-4] INFO  com.gms.controller.AppController - Log in  as a Citizen User
+2020-11-18 19:04:02,256 [http-nio-8080-exec-9] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 19:04:02,257 [http-nio-8080-exec-9] INFO  com.gms.controller.CitizenController - Citizen User Register the complaint
+2020-11-18 19:04:02,348 [http-nio-8080-exec-9] INFO  com.gms.dao.CitizenDaoImpl - Register Complaint into Database
+2020-11-18 19:04:04,079 [http-nio-8080-exec-8] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 19:04:04,079 [http-nio-8080-exec-8] INFO  com.gms.controller.CitizenController - Citizen User checkig our registered complaints
+2020-11-18 19:04:04,166 [http-nio-8080-exec-8] INFO  com.gms.dao.CitizenDaoImpl - Getting Complaints of Particular Citizen
+2020-11-18 19:04:14,417 [http-nio-8080-exec-4] INFO  com.gms.controller.AppController - Log in  as a Department Head 
+2020-11-18 19:04:15,928 [http-nio-8080-exec-6] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:04:16,104 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:04:16,106 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:04:16,291 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:04:16,292 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:05:52,072 [http-nio-8080-exec-2] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:05:52,208 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:05:52,211 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:05:52,341 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:05:52,343 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:05:58,222 [http-nio-8080-exec-9] INFO  com.gms.controller.HeadController - Try to transfer complaint
+2020-11-18 19:08:11,578 [http-nio-8080-exec-10] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:08:11,737 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:11,744 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:08:11,896 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:11,898 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:08:14,303 [http-nio-8080-exec-3] INFO  com.gms.controller.HeadController - Try to transfer complaint
+2020-11-18 19:08:20,973 [http-nio-8080-exec-4] INFO  com.gms.controller.HeadController - Head Transfering complete to the respective Department
+2020-11-18 19:08:21,042 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:21,164 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - updating department id after transfer complaint to another department
+2020-11-18 19:08:21,288 [http-nio-8080-exec-6] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:08:21,416 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:21,490 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:08:21,676 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:21,678 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:08:27,083 [http-nio-8080-exec-7] INFO  com.gms.controller.HeadController - Try to transfer complaint
+2020-11-18 19:08:29,708 [http-nio-8080-exec-5] INFO  com.gms.controller.HeadController - Head Transfering complete to the respective Department
+2020-11-18 19:08:29,776 [http-nio-8080-exec-5] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:29,844 [http-nio-8080-exec-5] INFO  com.gms.dao.HeadDaoImpl - updating department id after transfer complaint to another department
+2020-11-18 19:08:29,868 [http-nio-8080-exec-2] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:08:29,983 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:29,985 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:08:30,110 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:30,111 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:08:31,988 [http-nio-8080-exec-8] INFO  com.gms.controller.HeadController - Try to transfer complaint
+2020-11-18 19:08:34,277 [http-nio-8080-exec-1] INFO  com.gms.controller.HeadController - Head Transfering complete to the respective Department
+2020-11-18 19:08:34,336 [http-nio-8080-exec-1] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:34,390 [http-nio-8080-exec-1] INFO  com.gms.dao.HeadDaoImpl - updating department id after transfer complaint to another department
+2020-11-18 19:08:34,414 [http-nio-8080-exec-10] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:08:34,527 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:34,528 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:08:34,633 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:34,635 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:08:39,031 [http-nio-8080-exec-3] INFO  com.gms.controller.HeadController - Head taking some action on respective complaint
+2020-11-18 19:08:39,084 [http-nio-8080-exec-3] INFO  com.gms.dao.HeadDaoImpl - taking action on complaint
+2020-11-18 19:08:39,106 [http-nio-8080-exec-4] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:08:39,207 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:39,208 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:08:39,317 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:08:39,320 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:10:17,863 [http-nio-8080-exec-6] INFO  com.gms.controller.AppController - Log in  as a Department Head 
+2020-11-18 19:10:19,590 [http-nio-8080-exec-9] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:10:20,520 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:10:20,526 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:10:20,694 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:10:20,700 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:10:34,853 [http-nio-8080-exec-4] INFO  com.gms.controller.AppController - Log in  as a Citizen User
+2020-11-18 19:10:50,858 [http-nio-8080-exec-7] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 19:10:50,858 [http-nio-8080-exec-7] INFO  com.gms.controller.CitizenController - Citizen User Register the complaint
+2020-11-18 19:10:50,944 [http-nio-8080-exec-7] INFO  com.gms.dao.CitizenDaoImpl - Register Complaint into Database
+2020-11-18 19:10:54,796 [http-nio-8080-exec-8] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 19:10:54,797 [http-nio-8080-exec-8] INFO  com.gms.controller.CitizenController - Citizen User checkig our registered complaints
+2020-11-18 19:10:54,881 [http-nio-8080-exec-8] INFO  com.gms.dao.CitizenDaoImpl - Getting Complaints of Particular Citizen
+2020-11-18 19:11:13,200 [http-nio-8080-exec-4] INFO  com.gms.controller.AppController - Log in  as a Department Head 
+2020-11-18 19:11:14,570 [http-nio-8080-exec-2] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:11:14,711 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:14,714 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:11:14,847 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:14,850 [http-nio-8080-exec-2] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:11:16,855 [http-nio-8080-exec-5] INFO  com.gms.controller.HeadController - Try to transfer complaint
+2020-11-18 19:11:21,157 [http-nio-8080-exec-6] INFO  com.gms.controller.HeadController - Head Transfering complete to the respective Department
+2020-11-18 19:11:21,263 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - getting deptId by deptName which is needed for transfer complaint to another department from database
+2020-11-18 19:11:21,408 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - updating department id after transfer complaint to another department
+2020-11-18 19:11:21,512 [http-nio-8080-exec-7] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:11:21,652 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:21,653 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:11:21,791 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:21,793 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:11:36,459 [http-nio-8080-exec-1] INFO  com.gms.controller.AppController - Log in  as a Department Head 
+2020-11-18 19:11:38,074 [http-nio-8080-exec-4] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:11:38,192 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:38,194 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:11:38,318 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:38,321 [http-nio-8080-exec-4] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:11:50,683 [http-nio-8080-exec-2] INFO  com.gms.controller.HeadController - Try to transfer complaint
+2020-11-18 19:11:55,957 [http-nio-8080-exec-5] INFO  com.gms.controller.HeadController - Head Transfering complete to the respective Department
+2020-11-18 19:11:56,027 [http-nio-8080-exec-5] INFO  com.gms.dao.HeadDaoImpl - getting deptId by deptName which is needed for transfer complaint to another department from database
+2020-11-18 19:11:56,092 [http-nio-8080-exec-5] INFO  com.gms.dao.HeadDaoImpl - updating department id after transfer complaint to another department
+2020-11-18 19:11:56,123 [http-nio-8080-exec-6] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:11:56,288 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:56,291 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:11:56,454 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:11:56,456 [http-nio-8080-exec-6] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:16:18,312 [http-nio-8080-exec-8] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 19:16:18,377 [http-nio-8080-exec-8] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 19:35:24,912 [http-nio-8080-exec-2] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 19:35:26,451 [http-nio-8080-exec-2] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 19:41:51,746 [http-nio-8080-exec-7] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 19:41:51,852 [http-nio-8080-exec-7] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 19:42:12,073 [http-nio-8080-exec-9] INFO  com.gms.controller.AppController - Log in as a Admin
+2020-11-18 19:42:12,168 [http-nio-8080-exec-9] INFO  com.gms.dao.AdminDaoImpl - getting Heads
+2020-11-18 19:42:16,150 [http-nio-8080-exec-10] INFO  com.gms.controller.AdminController - Getting Heads
+2020-11-18 19:42:16,240 [http-nio-8080-exec-10] INFO  com.gms.dao.AdminDaoImpl - getting department head  which is needed for updating head
+2020-11-18 19:42:36,522 [http-nio-8080-exec-6] INFO  com.gms.controller.AppController - Log in  as a Department Head 
+2020-11-18 19:42:39,720 [http-nio-8080-exec-7] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:42:39,892 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:42:39,923 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:42:40,113 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:42:40,119 [http-nio-8080-exec-7] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:42:57,197 [http-nio-8080-exec-9] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:42:57,358 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:42:57,360 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:42:57,509 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:42:57,511 [http-nio-8080-exec-9] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:43:05,082 [http-nio-8080-exec-10] INFO  com.gms.controller.HeadController - Departmental Head Checking all complaints related to own Department
+2020-11-18 19:43:05,217 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:43:05,218 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Admin Adding head into the Database
+2020-11-18 19:43:05,351 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting Department id of that head
+2020-11-18 19:43:05,353 [http-nio-8080-exec-10] INFO  com.gms.dao.HeadDaoImpl - Getting all resolved complaints by Headname
+2020-11-18 19:43:26,365 [http-nio-8080-exec-5] INFO  com.gms.controller.AppController - Log in  as a Citizen User
+2020-11-18 19:43:32,385 [http-nio-8080-exec-8] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 19:43:32,385 [http-nio-8080-exec-8] INFO  com.gms.controller.CitizenController - Citizen User checkig our registered complaints
+2020-11-18 19:43:32,448 [http-nio-8080-exec-8] INFO  com.gms.dao.CitizenDaoImpl - Getting Complaints of Particular Citizen
+2020-11-18 20:00:18,427 [http-nio-8080-exec-6] INFO  com.gms.controller.AppController - Log in  as a Citizen User
+2020-11-18 20:00:51,256 [http-nio-8080-exec-1] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 20:00:51,427 [http-nio-8080-exec-1] INFO  com.gms.dao.CitizenDaoImpl - Register Complaint into Database
+2020-11-18 20:00:51,669 [http-nio-8080-exec-1] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 20:00:59,678 [http-nio-8080-exec-2] INFO  com.gms.dao.CitizenDaoImpl - getting Userid of the that username
+2020-11-18 20:00:59,678 [http-nio-8080-exec-2] INFO  com.gms.controller.CitizenController - Citizen User checkig our registered complaints
+2020-11-18 20:00:59,762 [http-nio-8080-exec-2] INFO  com.gms.dao.CitizenDaoImpl - Getting Complaints of Particular Citizen
