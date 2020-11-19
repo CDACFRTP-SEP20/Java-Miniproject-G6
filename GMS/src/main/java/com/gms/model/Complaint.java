@@ -1,9 +1,13 @@
 package com.gms.model;
 
+import java.io.InputStream;
 import java.sql.Blob;
 import java.util.Arrays;
 
+//POJO class
 public class Complaint {
+	
+	//member variables
 	private int cId;
 	private int userId;
 	private int deptId;
@@ -11,13 +15,14 @@ public class Complaint {
 	private String userRemark;
 	private String headRemark;
 	private String status;
-	private byte[] screenshot;
+	private InputStream screenshot;
+	
+	//constructors
 	public Complaint() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Complaint(int cId, int userId, int deptId, String description, String userRemark, String headRemark,
-			String status, byte[] screenshot) {
+			String status, InputStream screenshot) {
 		super();
 		this.cId = cId;
 		this.userId = userId;
@@ -29,7 +34,7 @@ public class Complaint {
 		this.screenshot = screenshot;
 	}
 	public Complaint(int userId, int deptId, String description, String userRemark, String headRemark, String status,
-			byte[] screenshot) {
+			InputStream screenshot) {
 		super();
 		this.userId = userId;
 		this.deptId = deptId;
@@ -39,6 +44,8 @@ public class Complaint {
 		this.status = status;
 		this.screenshot = screenshot;
 	}
+	
+	//getters and setters
 	public int getcId() {
 		return cId;
 	}
@@ -81,17 +88,20 @@ public class Complaint {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public byte[] getScreenshot() {
+	public InputStream getScreenshot() {
 		return screenshot;
 	}
-	public void setScreenshot(byte[] screenshot) {
+	public void setScreenshot(InputStream screenshot) {
 		this.screenshot = screenshot;
 	}
 	@Override
 	public String toString() {
 		return "Complaint [cId=" + cId + ", userId=" + userId + ", deptId=" + deptId + ", description=" + description
 				+ ", userRemark=" + userRemark + ", headRemark=" + headRemark + ", status=" + status + ", screenshot="
-				+ Arrays.toString(screenshot) + "]";
+				+ screenshot + "]";
 	}
+	
+	//toString method
+
 	
 }
